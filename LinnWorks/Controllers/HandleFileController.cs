@@ -26,11 +26,15 @@ namespace LinnWorks.Controllers
 			IFormFile file = Request.Form.Files[0];
 			Stream stream = file.OpenReadStream();
 			DataTable dt = GetDataTable(stream);
-			Import import = new Import(dt, context,1, file.FileName);
+			ImportProcessor import = new ImportProcessor(dt, context,1, file.FileName);
 			import.SaveToDataBase();
 			return "Success";
 		}
-
+		[HttpGet]
+		public IEnumerable<Import> GetImports()
+		{
+			return null;
+		}
 		private DataTable GetDataTable(Stream stream)
 		{
 			DataTable dt = new DataTable();

@@ -5,7 +5,7 @@
     <title>Import Data</title>
 </head>
 <body>
-  <input type="file" multiple (change)="fileChange1($event)" placeholder="Upload file" accept=".csv,"/>
+  <input type="file" multiple (change)="fileChange($event)" placeholder="Upload file" accept=".csv,"/>
   <table class="table table-stripped" aria-labelledby="tableLabel" *ngIf="imports">
     <thead>
       <tr>
@@ -18,7 +18,7 @@
       <tr *ngFor="let import of imports">
         <td>{{ import.id }}</td>
         <td>{{ import.LastModifyDttm }}</td>
-        <td>{{ import.LAStModifyUserId }}</td>
+        <td>{{ import.LastModifyUserId }}</td>
       </tr>
     </tbody>
   </table>
