@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Import Data</title>
+</head>
+<body>
+  <input type="file" multiple (change)="fileChange1($event)" placeholder="Upload file" accept=".csv,"/>
+  <table class="table table-stripped" aria-labelledby="tableLabel" *ngIf="imports">
+    <thead>
+      <tr>
+        <th>Import ID</th>
+        <th>Import Date (UTC)</th>
+        <th>User ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let import of imports">
+        <td>{{ import.id }}</td>
+        <td>{{ import.LastModifyDttm }}</td>
+        <td>{{ import.LAStModifyUserId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
