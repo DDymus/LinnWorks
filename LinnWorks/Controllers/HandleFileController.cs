@@ -21,7 +21,7 @@ namespace LinnWorks.Controllers
 			this.context = context;
 		}
 		[HttpPost]
-		public string InsertValues()
+		public string PostFile()
 		{
 			IFormFile file = Request.Form.Files[0];
 			Stream stream = file.OpenReadStream();
@@ -30,11 +30,7 @@ namespace LinnWorks.Controllers
 			import.SaveToDataBase();
 			return "Success";
 		}
-		[HttpGet]
-		public IEnumerable<Import> GetImports()
-		{
-			return null;
-		}
+
 		private DataTable GetDataTable(Stream stream)
 		{
 			DataTable dt = new DataTable();

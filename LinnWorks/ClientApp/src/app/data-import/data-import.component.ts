@@ -10,7 +10,10 @@ export class ImportDataComponent {
   imports: Import[];
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseURL = baseUrl;
-    http.get<Import[]>(baseUrl + 'HandleFile').subscribe(result => {
+    this.loadImport();
+  }
+  public loadImport() {
+    this.http.get<Import[]>(this.baseURL + 'Import').subscribe(result => {
       this.imports = result;
     }, error => console.error(error));
   }
@@ -36,7 +39,7 @@ export class ImportDataComponent {
 
     formData.append('File', file, file.name);
     return this.http.post(url, formData).subscribe(result => {
-      console.log(result);
+      window.location.reload();
     }, error => console.error(error));
   }
   private validateFile() {

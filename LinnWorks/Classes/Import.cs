@@ -8,7 +8,7 @@ namespace LinnWorks.Classes
 	public class Import
 	{
 		public int id { get; set; }
-		public DateTime LastModifyDttm { get; set; }
+		public string LastModifyDttm { get; set; }
 		public int LastModifyUserId { get; set; }
 	}
 }
