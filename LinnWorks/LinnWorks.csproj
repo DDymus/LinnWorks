@@ -34,6 +34,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\app\imports-table\imports-table.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\imports-table\imports-table.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\orders\orders.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\orders\orders.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\data-import\data-import.component.ts" />
   </ItemGroup>
 

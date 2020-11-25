@@ -10,12 +10,8 @@ export class ImportDataComponent {
   imports: Import[];
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseURL = baseUrl;
-    this.loadImport();
-  }
-  public loadImport() {
-    this.http.get<Import[]>(this.baseURL + 'Import').subscribe(result => {
-      this.imports = result;
-    }, error => console.error(error));
+    this.loadImports();
+    this.loadOrders();
   }
   public fileChange(event) {
     const fileList: FileList = event.target.files;
@@ -39,17 +35,29 @@ export class ImportDataComponent {
 
     formData.append('File', file, file.name);
     return this.http.post(url, formData).subscribe(result => {
-      window.location.reload();
-    }, error => console.error(error));
+      this.loadImports();
+      this.loadOrders();
+    }, error => {
+        this.loadImports();
+        this.loadOrders();
+    });
   }
   private validateFile() {
     return true;
   }
-  
-
+  private loadImports() {
+    this.http.get<Import[]>(this.baseURL + 'Import').subscribe(result => {
+      this.imports = result;
+    }, error => console.error(error));
+  }
+  private loadOrders() {
+    this.http.get<Import[]>(this.baseURL + 'Orders').subscribe(result => {
+      this.imports = result;
+    }, error => console.error(error));}
 }
 interface Import {
   id: number;
-  LastModifyDttm: string;
-  LastModifyUserId: number;
+  lastModifyDttm: string;
+  lastModifyUserId: number;
+  originalFileName: string;
 }

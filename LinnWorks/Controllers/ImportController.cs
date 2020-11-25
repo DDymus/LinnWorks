@@ -21,13 +21,9 @@ namespace LinnWorks.Controllers
 		public IEnumerable<Import> GetImports()
 		{
 			List<Import> toReturn = new List<Import>();
-			foreach(Models.Import import in context.Imports )
+			foreach(Models.Import import in context.Imports.OrderBy(x => x.LastModifyDttm))
 			{
-				Import i = new Import();
-				i.id = import.ImportId;
-				i.LastModifyUserId = import.LAstModifyUserId;
-				i.LastModifyDttm = import.LastModifyDttm.ToString();
-				toReturn.Add( i );
+				toReturn.Add( new Import() {  id = import.ImportId, LastModifyDttm=import.LastModifyDttm.ToString(), LastModifyUserId = import.LAstModifyUserId, OriginalFileName = import.OriginalFileName} );
 			}
 			return toReturn;
 		}

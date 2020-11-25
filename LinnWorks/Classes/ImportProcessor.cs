@@ -36,7 +36,7 @@ namespace LinnWorks.Classes
 				string itemTypeName = oRow["Item Type"].ToString();
 				string orderPriorityName = oRow["Order Priority"].ToString();
 				int orderIdExt= Convert.ToInt32(oRow["Order ID"]);
-				Order order = new Order();
+				LinnWorks.Models.Order order = new LinnWorks.Models.Order();
 				if(context.Orders.Where(x=>x.OrderIdExt == orderIdExt).Any())
 				{
 					order = context.Orders.Where(x => x.OrderIdExt == orderIdExt).FirstOrDefault();

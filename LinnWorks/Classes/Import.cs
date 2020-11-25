@@ -10,5 +10,6 @@ namespace LinnWorks.Classes
 		public int id { get; set; }
 		public string LastModifyDttm { get; set; }
 		public int LastModifyUserId { get; set; }
+		public string OriginalFileName { get; set; }
 	}
 }

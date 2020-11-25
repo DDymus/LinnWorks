@@ -1,0 +1,22 @@
+
+<div *ngIf="orders">
+  Orders
+  <table class="table table-stripped" aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Import ID</th>
+        <th>Import Date (UTC)</th>
+        <th>User ID</th>
+        <th>File Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.lastModifyDttm }}</td>
+        <td>{{ order.lastModifyUserId }}</td>
+        <td>{{ order.originalFileName }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

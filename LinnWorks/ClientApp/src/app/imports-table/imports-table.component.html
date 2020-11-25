@@ -1,0 +1,21 @@
+<div *ngIf="imports">
+  Imports
+  <table class="table table-stripped" aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Import ID</th>
+        <th>Import Date (UTC)</th>
+        <th>User ID</th>
+        <th>File Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let import of imports">
+        <td>{{ import.id }}</td>
+        <td>{{ import.lastModifyDttm }}</td>
+        <td>{{ import.lastModifyUserId }}</td>
+        <td>{{ import.originalFileName }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
