@@ -11,12 +11,11 @@ export class ImportsTableComponent implements OnChanges {
 /** imports-table ctor */
   baseURL = "";
   @Input() imports: any;
-  
   constructor() {
    
     }
   ngOnChanges(): void {
-    console.log(this.imports);
+    
     }
 }
  

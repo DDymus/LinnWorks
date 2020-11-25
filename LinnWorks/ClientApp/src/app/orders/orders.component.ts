@@ -9,10 +9,12 @@ import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
 export class OrdersComponent implements OnChanges {
 /** orders ctor */
   @Input() orders: any;
+  @Input() countries: any;
     constructor() {
 
     }
-    ngOnChanges(changes: SimpleChanges): void {
-        throw new Error('Method not implemented.');
+  ngOnChanges(): void {
+    console.log(this.orders);
+    console.log(this.countries);
     }
 }

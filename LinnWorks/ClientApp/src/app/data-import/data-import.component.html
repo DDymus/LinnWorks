@@ -6,7 +6,7 @@
 </head>
 <body>
   <input type="file" multiple (change)="fileChange($event)" placeholder="Upload file" accept=".csv," />
-  <app-imports-table [imports]="imports"></app-imports-table>
-  <app-orders [orders]="orders"></app-orders>
+  <app-imports-table [imports]="imports" ></app-imports-table>
+  <app-orders [orders]="orders" [countries] ="countries"></app-orders>
 </body>
 </html>

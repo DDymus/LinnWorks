@@ -69,7 +69,7 @@ namespace LinnWorks.Classes
 					region = context.Regions.Where(x => x.Name == regionName).FirstOrDefault();
 				}
 				region.Orders.Add(order);
-				Country country = new Country();
+				LinnWorks.Models.Country country = new LinnWorks.Models.Country();
 				if(!context.Countries.Where(x=>x.Name == countryName).Any())
 				{
 					country.Name = countryName;
