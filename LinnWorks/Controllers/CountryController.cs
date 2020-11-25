@@ -19,7 +19,7 @@ namespace LinnWorks.Controllers
 			this.context = context;
 		}
 		[HttpGet]
-		public IEnumerable<Country> GetImports()
+		public IEnumerable<Country> GetCountries()
 		{
 			List<Country> toReturn = new List<Country>();
 			foreach(LinnWorks.Models.Country country in context.Countries)

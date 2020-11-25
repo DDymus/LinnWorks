@@ -22,7 +22,7 @@ namespace LinnWorks.Controllers
 		public IEnumerable<Order> GetImports( int countryId)
 		{
 			List<Order> toReturn = new List<Order>();
-			foreach(LinnWorks.Models.Order order in context.Orders.Where( x=> x.CountryId == countryId))
+			foreach(LinnWorks.Models.Order order in context.Orders.Where( x=> x.CountryId == 1))
 			{
 				toReturn.Add(new Order() { ID = order.CountryId, OrderID = order.OrderIdExt, Region = order.Region.Name });
 			}

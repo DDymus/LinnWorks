@@ -5,8 +5,10 @@
     <title>Import Data</title>
 </head>
 <body>
-  <input type="file" multiple (change)="fileChange($event)" placeholder="Upload file" accept=".csv," />
-  <app-imports-table [imports]="imports" ></app-imports-table>
-  <app-orders [orders]="orders" [countries] ="countries"></app-orders>
+  <form>
+    <input type="file" multiple (change)="fileChange($event)" placeholder="Upload file" accept=".csv," />
+    <app-imports-table [imports]="imports"></app-imports-table>
+    <app-orders></app-orders>
+  </form>
 </body>
 </html>

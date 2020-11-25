@@ -1,21 +1,25 @@
-Orders
-<div>
+<form>
+  <div>
+    <select #countrySelect (change) ="onCountryChange(countrySelect.value);">
+      <option *ngFor =" let country of countries" value="{{country.id}}"  >{{country.name}}</option>
+    </select>
     <table class="table table-stripped" aria-labelledby="tableLabel">
       <thead>
         <tr>
-          <th>Import ID</th>
-          <th>Import Date (UTC)</th>
-          <th>User ID</th>
-          <th>File Name</th>
+          <th>Order ID</th>
+          <th>Order External ID</th>
+          <th> Country</th>
+          <th>Region</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let order of orders">
           <td>{{ order.id }}</td>
-          <td>{{ order.lastModifyDttm }}</td>
-          <td>{{ order.lastModifyUserId }}</td>
-          <td>{{ order.originalFileName }}</td>
+          <td>{{ order.extid }}</td>
+          <td>{{ order.country }}</td>
+          <td>{{ order.region }}</td>
         </tr>
       </tbody>
     </table>
-</div>
+  </div>
+</form>
