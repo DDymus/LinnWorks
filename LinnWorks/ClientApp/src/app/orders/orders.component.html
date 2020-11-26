@@ -10,14 +10,25 @@
           <th>Order External ID</th>
           <th> Country</th>
           <th>Region</th>
+          <th>Order Date</th>
+          <th>Ship Date</th>
+          <th>Units Sold</th>
+          <th>Unit Price</th>
+          <th>Unit Cost</th><th></th><th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let order of orders">
           <td>{{ order.id }}</td>
-          <td>{{ order.extid }}</td>
+          <td>{{ order.extId }}</td>
           <td>{{ order.country }}</td>
           <td>{{ order.region }}</td>
+          <td>{{ order.orderDate }}</td>
+          <td>{{ order.shipDate }}</td>
+          <td>{{ order.unitsSold }}</td>
+          <td>{{ order.unitPrice }}</td>
+          <td>{{ order.unitCost }}</td>
+          <td><button (click) ="onDelete(order.id)">Delete</button></td>
         </tr>
       </tbody>
     </table>

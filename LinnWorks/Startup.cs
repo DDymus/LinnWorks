@@ -23,7 +23,7 @@ namespace LinnWorks
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddDbContext<DataBaseContext>(options =>
-				options.UseSqlServer(Configuration.GetConnectionString("LocalDB")));
+				options.UseSqlServer( Configuration.GetConnectionString("LocalDB")));
 			services.AddControllersWithViews();
 			// In production, the Angular files will be served from this directory
 			services.AddSpaStaticFiles(configuration =>

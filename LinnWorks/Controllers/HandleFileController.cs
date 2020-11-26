@@ -21,6 +21,8 @@ namespace LinnWorks.Controllers
 			this.context = context;
 		}
 		[HttpPost]
+		[DisableRequestSizeLimit]
+		[RequestFormLimits(ValueLengthLimit =int.MaxValue, MultipartBodyLengthLimit =int.MaxValue)]
 		public string PostFile()
 		{
 			IFormFile file = Request.Form.Files[0];
