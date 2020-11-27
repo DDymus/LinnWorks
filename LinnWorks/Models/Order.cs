@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinnWorks.Models
 {
+	/*Order DB Object. Country, Region, Type, Priority are referenced as IDs to corresponding DB items.*/
 	public class Order : DBModel
 	{
 		public int OrderId { get; set; }
