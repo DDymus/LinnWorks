@@ -17,12 +17,13 @@ export class ReportComponent {
     this.HTTP = http;
     this.baseURL = baseUrl;
     this.HTTP.get<Report[]>(this.baseURL + 'Report').subscribe(result => {
+      this.reports = result;
     }, error => console.error(error));
   }
 }
 interface Report{
-  country: string;
+  countryName: string;
   year: number;
-  nrOrders: number;
+  count: number;
   profit: number;
 }

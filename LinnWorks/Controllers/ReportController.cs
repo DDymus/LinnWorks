@@ -21,15 +21,19 @@ namespace LinnWorks.Controllers
 		[HttpGet]
 		public IEnumerable<ReportModel> Get()
 		{
-			List<ReportModel> toReturn = new List<ReportModel>();
-			context.Orders.GroupBy(x => new { x.CountryId, x.OrderDate.Year }).Select(g => new
-			{
+			return context.Orders.GroupBy( x => new { x.CountryId, x.OrderDate.Year } ).Select( g => new {
 				CountryID = g.Key.CountryId,
 				Year = g.Key.Year,
 				Count = g.Count(),
-				Profit = g.Sum(c=>c.TotalProfit)
-			}).ToArray();
-			return toReturn;
+				Profit = g.Sum( c => c.TotalProfit )
+			}).Join(context.Countries, p=> p.CountryID, e=>e.CountryId, (p,e) => new ReportModel {
+				CountryName = e.Name,
+				CountryID = e.CountryId,
+				Count = p.Count,
+				Year = p.Year,
+				Profit = p.Profit
+			} ).OrderBy( x=>x.CountryName).ThenBy(x=>x.Year).ToArray();
+			
 		}
 	}
 }
