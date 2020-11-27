@@ -10,6 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AssemblyName>ÜÜ</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,6 +39,8 @@
     <TypeScriptCompile Remove="ClientApp\src\app\imports-table\imports-table.component.ts" />
     <TypeScriptCompile Remove="ClientApp\src\app\orders\orders.component.spec.ts" />
     <TypeScriptCompile Remove="ClientApp\src\app\orders\orders.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\report\report.component.spec.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\report\report.component.ts" />
   </ItemGroup>
 
   <ItemGroup>

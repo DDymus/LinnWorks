@@ -1,0 +1,18 @@
+<table class="table table-stripped" aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>Year</th>
+      <th>Nr. Orders</th>
+      <th> Profit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let report of reports">
+      <td>{{ report.country}}</td>
+      <td>{{report.year}}</td>
+      <td>{{ report.nrOrders }}</td>
+      <td>{{ report.profit }}</td>
+    </tr>
+  </tbody>
+</table>

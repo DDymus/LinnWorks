@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ImportDataComponent } from './data-import/data-import.component';
 import { ImportsTableComponent } from './imports-table/imports-table.component'
 import { OrdersComponent } from './orders/orders.component';
+import {ReportComponent} from './report/report.component'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { OrdersComponent } from './orders/orders.component';
     AppComponent,
     ImportDataComponent,
     ImportsTableComponent,
-    OrdersComponent
+    OrdersComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
