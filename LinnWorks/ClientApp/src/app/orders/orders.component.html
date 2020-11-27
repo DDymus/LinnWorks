@@ -1,7 +1,7 @@
 <form>
   <div>
     <select #countrySelect (change) ="onCountryChange(countrySelect.value);">
-      <option *ngFor =" let country of countries" value="{{country.id}}"  >{{country.name}}</option>
+      <option *ngFor =" let country of countries" value="{{country.countryId}}"  >{{country.name}}</option>
     </select>
     <table class="table table-stripped" aria-labelledby="tableLabel">
       <thead>

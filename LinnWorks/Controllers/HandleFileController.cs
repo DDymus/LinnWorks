@@ -23,14 +23,14 @@ namespace LinnWorks.Controllers
 		[HttpPost]
 		[DisableRequestSizeLimit]
 		[RequestFormLimits(ValueLengthLimit =int.MaxValue, MultipartBodyLengthLimit =int.MaxValue)]
-		public string PostFile()
+		public IActionResult PostFile()
 		{
 			IFormFile file = Request.Form.Files[0];
 			Stream stream = file.OpenReadStream();
 			DataTable dt = GetDataTable(stream);
 			ImportProcessor import = new ImportProcessor(dt, context,1, file.FileName);
 			import.SaveToDataBase();
-			return "Success";
+			return Ok( "OK") ;
 		}
 
 		private DataTable GetDataTable(Stream stream)

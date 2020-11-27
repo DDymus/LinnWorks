@@ -26,7 +26,7 @@ namespace LinnWorks.Classes
 		internal void SaveToDataBase()
 		{
 			LinnWorks.Models.Import import = new LinnWorks.Models.Import();
-			import.LAstModifyUserId = user_id;
+			import.LastModifyUserId = user_id;
 			import.LastModifyDttm = DateTime.UtcNow;
 			
 			foreach(DataRow oRow in values.Rows)
@@ -54,14 +54,14 @@ namespace LinnWorks.Classes
 				order.TotalCost = Convert.ToDouble(oRow["Total Cost"]);
 				order.TotalProfit = Convert.ToDouble(oRow["Total Profit"]);
 				order.LastModifyDttm = DateTime.UtcNow;
-				order.LAstModifyUserId = user_id;
+				order.LastModifyUserId = user_id;
 				
 				Region region = new Region();
 				if (!context.Regions.Where(x => x.Name == regionName).Any())
 				{
 					region.Name = regionName;
 					region.LastModifyDttm = DateTime.UtcNow;
-					region.LAstModifyUserId = user_id;
+					region.LastModifyUserId = user_id;
 					context.Regions.Add(region);
 				}
 				else
@@ -74,7 +74,7 @@ namespace LinnWorks.Classes
 				{
 					country.Name = countryName;
 					country.LastModifyDttm = DateTime.UtcNow;
-					country.LAstModifyUserId = user_id;
+					country.LastModifyUserId = user_id;
 					context.Countries.Add(country);
 				}
 				else
@@ -87,7 +87,7 @@ namespace LinnWorks.Classes
 				{
 					itemType.Name = itemTypeName;
 					itemType.LastModifyDttm = DateTime.UtcNow;
-					itemType.LAstModifyUserId = user_id;
+					itemType.LastModifyUserId = user_id;
 					context.ItemTypes.Add(itemType);
 				}
 				else
@@ -100,7 +100,7 @@ namespace LinnWorks.Classes
 				{
 					orderPriority.name = orderPriorityName;
 					orderPriority.LastModifyDttm = DateTime.UtcNow;
-					orderPriority.LAstModifyUserId = user_id;
+					orderPriority.LastModifyUserId = user_id;
 					context.OrderPriorities.Add(orderPriority);
 				}
 				else

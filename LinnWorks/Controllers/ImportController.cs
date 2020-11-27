@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LinnWorks.Classes;
 using LinnWorks.Data;
+using LinnWorks.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LinnWorks.Controllers
@@ -20,12 +21,7 @@ namespace LinnWorks.Controllers
 		[HttpGet]
 		public IEnumerable<Import> GetImports()
 		{
-			List<Import> toReturn = new List<Import>();
-			foreach(Models.Import import in context.Imports.OrderBy(x => x.LastModifyDttm))
-			{
-				toReturn.Add( new Import() {  id = import.ImportId, LastModifyDttm=import.LastModifyDttm.ToString(), LastModifyUserId = import.LAstModifyUserId, OriginalFileName = import.OriginalFileName} );
-			}
-			return toReturn;
+			return context.Imports.OrderBy( x => x.LastModifyDttm ).ToArray();
 		}
 	}
 }

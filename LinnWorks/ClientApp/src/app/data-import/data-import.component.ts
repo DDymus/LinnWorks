@@ -33,10 +33,8 @@ export class ImportDataComponent {
     const formData: FormData = new FormData();
 
     formData.append('File', file, file.name);
-    return this.http.post(url, formData).subscribe(result => {
-      this.loadImports();
-    }, error => {
-      this.loadImports();
+    return this.http.post(url, formData).subscribe(error => {
+        console.error(error);
     });
   }
   private validateFile() {
@@ -49,7 +47,7 @@ export class ImportDataComponent {
   }
 }
 interface Import {
-  id: number;
+  ImportId: number;
   lastModifyDttm: string;
   lastModifyUserId: number;
   originalFileName: string;

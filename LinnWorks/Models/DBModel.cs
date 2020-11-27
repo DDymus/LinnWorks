@@ -7,7 +7,7 @@ namespace LinnWorks.Models
 {
 	public class DBModel
 	{
-		public int LAstModifyUserId { get; set; }
+		public int LastModifyUserId { get; set; }
 		public DateTime LastModifyDttm { get; set; }
 	}
 }

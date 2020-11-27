@@ -19,7 +19,7 @@ export class OrdersComponent {
     this.baseURL = baseUrl;
     this.HTTP.get<Country[]>(this.baseURL + 'Country').subscribe(result => {
       this.countries = result;
-      this.countries.unshift({ id: 0, name: "All" });
+      this.countries.unshift({ countryId: 0, name: "All" });
       this.onCountryChange(0);
       }, error => console.error(error));
   }
@@ -35,11 +35,11 @@ export class OrdersComponent {
 }
 
 interface Country{
-  id: number;
+  countryId: number;
   name: string;
 }
 interface Order {
-  id: number;
+  orderId: number;
   extId: number;
   country: string;
   region: string;
