@@ -19,8 +19,8 @@ namespace LinnWorks.Controllers
 		{
 			this.context = context;
 		}
-		[HttpGet]
-		public IEnumerable<Order> Get( int countryId)
+		[HttpGet("GetByCountryId")]
+		public IEnumerable<Order> GetByCountryId( int countryId)
 		{
 			List<Order> toReturn = new List<Order>();
 			foreach(LinnWorks.Models.Order order in context.Orders.Include( x=> x.Country).Include( x => x.Region).Where( x=> ( x.CountryId == countryId || countryId == 0)).OrderBy(x=> x.OrderDate))

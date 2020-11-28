@@ -25,12 +25,12 @@ export class OrdersComponent {
   }
   onCountryChange(value) {
     this.selectedCountry = value;
-    this.HTTP.get<Order[]>(this.baseURL + 'Orders?countryId=' + value).subscribe(result => {
+    this.HTTP.get<Order[]>(this.baseURL + 'Orders/GetByCountryId?countryId=' + value).subscribe(result => {
       this.orders = result;
     }, error => console.error(error));
   }
   onDelete(id) {
-    this.HTTP.delete(this.baseURL + 'Orders?id=' + id).subscribe(result => { this.onCountryChange(this.selectedCountry); }, error => { console.error(error) });
+    this.HTTP.delete(this.baseURL + 'Orders/GetByCountryId?id=' + id).subscribe(result => { this.onCountryChange(this.selectedCountry); }, error => { console.error(error) });
   }
 }
 
